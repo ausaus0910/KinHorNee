@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- index.html | KinHorNee (กินหอนี้) | Owner: Partner A (Feature 1: semantic HTML + accessibility) -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>KinHorNee (กินหอนี้) | CMU dorm canteen menus and prices</title>
+  <meta name="description" content="Check menus and prices at CMU dorm canteens before you walk over, and plan your meal to fit your budget.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%9C%3C/text%3E%3C/svg%3E">
+  <!-- Fonts are optional: if offline, the fallback fonts in style.css are used -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ========== Header: logo, search, my plan ========== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="#top" aria-label="KinHorNee, back to top">
+        <svg class="logo__icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <path d="M4 15h24a12 12 0 0 1-24 0z" fill="currentColor"/>
+          <path d="M11 3c-2.4 2.2 2.4 3.4 0 6.4M16 2c-2.4 2.2 2.4 3.4 0 7.4M21 3c-2.4 2.2 2.4 3.4 0 6.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <rect x="9" y="28" width="14" height="2" rx="1" fill="currentColor"/>
+        </svg>
+        <span class="logo__text">
+          <span class="logo__name">KinHorNee</span>
+          <span class="logo__th">กินหอนี้</span>
+        </span>
+      </a>
+
+      <div class="search" role="search">
+        <label class="visually-hidden" for="search">Search shops or dishes</label>
+        <input id="search" type="search" placeholder="Search shops or dishes" autocomplete="off">
+        <kbd class="search__key" aria-hidden="true">/</kbd>
+      </div>
+
+      <button type="button" class="plan-btn" id="plan-button" data-action="open-plan" aria-label="Open my plan: 0 items, 0 baht">
+        <svg class="plan-btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 8h18l-2 11a2 2 0 0 1-2 1.6H7A2 2 0 0 1 5 19L3 8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M8 8a4 4 0 0 1 8 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="plan-btn__label">My plan</span>
+        <span class="plan-btn__count" id="plan-count">0</span>
+        <span class="plan-btn__total" id="plan-header-total">฿0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== Main content ========== -->
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Know the price before you walk over.</h1>
+      <p class="hero__lead">Pick your dorm, browse every canteen shop, and add dishes to a plan to see your total.</p>
+      <p class="hero__demo">Demo build: shops, dishes and prices are placeholders.</p>
+    </section>
+
+    <section class="section" aria-labelledby="dorm-title">
+      <h2 class="section__title" id="dorm-title">Choose your dorm</h2>
+      <ul class="dorm-grid" id="dorm-picker"></ul>
+    </section>
+
+    <section class="section" aria-labelledby="shops-title">
+      <div class="section__head">
+        <h2 class="section__title" id="shops-title">Shops</h2>
+        <p class="section__count" id="shop-count" aria-live="polite"></p>
+      </div>
+      <ul class="chip-row" id="chip-row" aria-label="Filter shops by category"></ul>
+      <ul class="shop-grid" id="shop-list"></ul>
+      <noscript><p class="empty">KinHorNee needs JavaScript to show the menus. Please turn it on.</p></noscript>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>KinHorNee (กินหอนี้), a student project for 953104 Web User Interface Design and Development. Prices change, so check the date shown on each shop.</p>
+  </footer>
+
+  <!-- ========== Modal 1: shop menu ========== -->
+  <dialog id="shop-dialog" aria-labelledby="shop-title-text">
+    <header class="dlg-head">
+      <div>
+        <h2 class="dlg-title" id="shop-title-text"></h2>
+        <p class="dlg-sub" id="shop-sub"></p>
+      </div>
+      <button type="button" class="icon-btn" data-action="close" aria-label="Close menu">&#10005;</button>
+    </header>
+    <div class="dlg-body" id="shop-body">
+      <figure class="board">
+        <img id="shop-board" alt="" width="640" height="400">
+        <figcaption id="shop-checked"></figcaption>
+      </figure>
+      <div id="menu-sections"></div>
+    </div>
+    <footer class="dlg-foot">
+      <div class="dlg-foot__row">
+        <button type="button" class="btn btn--ghost" data-action="open-form">+ Add missing dish</button>
+        <button type="button" class="btn btn--primary" id="shop-plan-button" data-action="open-plan">View plan</button>
+      </div>
+    </footer>
+  </dialog>
+
+  <!-- ========== Modal 2: my plan (basket) ========== -->
+  <dialog id="plan-dialog" class="narrow" aria-labelledby="plan-title">
+    <header class="dlg-head">
+      <div>
+        <h2 class="dlg-title" id="plan-title">My meal plan</h2>
+        <p class="dlg-sub">This only adds up prices. It is not an order.</p>
+      </div>
+      <button type="button" class="icon-btn" data-action="close" aria-label="Close plan">&#10005;</button>
+    </header>
+    <div class="dlg-body">
+      <p class="empty" id="plan-empty">Nothing here yet. Open a shop and tap &ldquo;+ Add&rdquo; to start your plan.</p>
+      <ul class="plan-list" id="plan-list"></ul>
+      <div class="plan-total">
+        <span>Total</span>
+        <span class="price price--big" id="plan-total">฿0</span>
+      </div>
+      <div class="budget">
+        <label for="budget-input">My budget in baht (optional)</label>
+        <input id="budget-input" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 100" aria-describedby="budget-result">
+        <p class="budget-result" id="budget-result" role="status"></p>
+      </div>
+    </div>
+    <footer class="dlg-foot">
+      <div class="dlg-foot__row">
+        <button type="button" class="btn btn--ghost" data-action="clear-plan">Clear all</button>
+        <button type="button" class="btn btn--primary" data-action="close">Done</button>
+      </div>
+    </footer>
+  </dialog>
+
+  <!-- ========== Modal 3: add a missing dish (form) ========== -->
+  <dialog id="add-dialog" class="narrow" aria-labelledby="add-title">
+    <form class="dlg-form" id="add-form" novalidate>
+      <header class="dlg-head">
+        <div>
+          <h2 class="dlg-title" id="add-title">Add a missing dish</h2>
+          <p class="dlg-sub">Adding to <strong id="add-target"></strong></p>
+        </div>
+        <button type="button" class="icon-btn" data-action="close" aria-label="Close form">&#10005;</button>
+      </header>
+      <div class="dlg-body">
+        <div class="field">
+          <label for="f-name">Dish name</label>
+          <input id="f-name" type="text" autocomplete="off" autofocus aria-describedby="hint-name err-name">
+          <p class="hint" id="hint-name">2 to 40 characters, Thai or English.</p>
+          <p class="error" id="err-name"></p>
+        </div>
+        <div class="field">
+          <label for="f-price">Price in baht</label>
+          <input id="f-price" type="text" inputmode="numeric" autocomplete="off" aria-describedby="hint-price err-price">
+          <p class="hint" id="hint-price">A whole number from 1 to 500.</p>
+          <p class="error" id="err-price"></p>
+        </div>
+        <div class="field">
+          <label for="f-category">Category</label>
+          <select id="f-category" aria-describedby="err-category"></select>
+          <p class="error" id="err-category"></p>
+        </div>
+      </div>
+      <footer class="dlg-foot">
+        <div class="dlg-foot__row">
+          <button type="button" class="btn btn--ghost" data-action="close">Cancel</button>
+          <button type="submit" class="btn btn--primary">Save dish</button>
+        </div>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Scripts: data first, then the app. Plain scripts, no modules, so it opens by double-click. -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
