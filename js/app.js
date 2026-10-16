@@ -1,26 +1,3 @@
-/* =========================================================
-   app.js  |  KinHorNee (กินหอนี้)   SIMPLE VERSION
-
-   Read this file from top to bottom:
-     1. VARIABLES   what the app remembers
-     2. ELEMENTS    boxes in index.html that JS fills in or reads
-     3. HELPERS     tiny functions used in many places
-     4. RENDER      functions that DRAW the page from the data
-     5. EVENTS      what happens on click, typing and keys
-     6. FORM        add a new dish, with validation
-     7. START       draw the page for the first time
-
-   The one rule of this app:
-     change a variable  ->  call the render function that draws it.
-
-   Who owns what (write this in your document):
-     Feature 3  data + render ........ data.js, section 4
-     Feature 4  form + validation .... section 6
-     Feature 5  delete + filter ...... section 4 (shopMatches), section 5 ("remove")
-     Feature 6  <dialog> modals ...... openShop(), "open-plan" and "close" in section 5
-     Feature 7  keyboard ............. end of section 5
-   ========================================================= */
-
 
 // ---------- 1. VARIABLES (what the app remembers) ----------
 let currentDorm = "d3";        // id of the selected dorm

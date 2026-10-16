@@ -1,21 +1,3 @@
-/* =========================================================
-   style.css  |  KinHorNee (กินหอนี้)
-   Owner: Partner B  (Feature 2: responsive layout)
-
-   Contents
-   1. Colour and type tokens      7. Shop modal and dishes
-   2. Base                        8. Plan modal
-   3. Header                      9. Add-dish form
-   4. Hero and sections          10. Buttons
-   5. Dorm cards                 11. Utilities
-   6. Chips and shop cards
-
-   Design idea: CMU purple for structure, and a marigold
-   "price sticker" so every price is easy to spot.
-   Mobile first: base styles are for phones, the
-   @media (min-width) blocks add the desktop layout.
-   ========================================================= */
-
 /* ---------- 1. Tokens ---------- */
 :root {
   box-sizing: border-box;
