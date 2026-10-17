@@ -1,6 +1,6 @@
 // ---------- Reusable add-ons (toppings) ----------
-const EGG          = { name: "ไข่ดาว (Fried egg)",               price: 10 };
-const BOILED_EGG   = { name: "ไข่ต้ม (Boiled egg)",              price: 8 };
+const EGG          = { name: "ไข่ดาว (Fried egg)",               price: 6 };
+const BOILED_EGG   = { name: "ไข่ต้ม (Boiled egg)",              price: 5 };
 const EXTRA_RICE   = { name: "ข้าวเพิ่ม (Extra rice)",           price: 5 };
 const EXTRA_MEAT   = { name: "เนื้อสัตว์เพิ่ม (Extra meat)",     price: 15 };
 const EXTRA_NOODLE = { name: "เส้นเพิ่ม (Extra noodles)",        price: 5 };
@@ -40,7 +40,7 @@ const dorms = [
 const shops = [
 
   // Dorm 3 
-  { id: "s301", dormId: "d3", name: "ร้านข้าวมันไก่ยินดี", nameEn: "Yin Dee Chicken Rice", category: "Snacks",   
+  { id: "s301", dormId: "d3", name: "ร้านข้าวมันไก่ยินดี", nameEn: "Yin Dee Chicken Rice", category: "Cooked to Order",   
     img: "images/Dorm3/s301.jpg", alt: "",
     menuImg: "images/Dorm3/s301.jpg", menuAlt: "", checked: "16 Oct 2026" },
   
@@ -346,327 +346,327 @@ const dishes = [
 
   { id: "m66", shopId: "s401", category: "Noodles",
     name: "ผัดซีอิ๊ว หมูหมัก/หมูสับ", nameEn: "Soy sauce stir-fried noodles, marinated or minced pork",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m67", shopId: "s401", category: "Noodles",
     name: "ผัดซีอิ๊ว ไก่/ไก่กรอบ", nameEn: "Soy sauce stir-fried noodles, chicken or crispy chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m68", shopId: "s401", category: "Noodles",
     name: "ผัดซีอิ๊ว หมูกรอบ/สามชั้น", nameEn: "Soy sauce stir-fried noodles, crispy pork or pork belly",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m69", shopId: "s401", category: "Noodles",
     name: "ผัดซีอิ๊วทะเลรวม", nameEn: "Soy sauce stir-fried noodles, mixed seafood",
-    price: 45, addOns: [] },
+    price: 45, addOns: [EGG] },
 
   { id: "m70", shopId: "s401", category: "Noodles",
     name: "สปาเก็ตตี้ผัดซอส หมูหมัก/หมูสับ", nameEn: "Spaghetti in sauce, marinated or minced pork",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m71", shopId: "s401", category: "Noodles",
     name: "สปาเก็ตตี้ผัดซอส ไก่/ไก่กรอบ", nameEn: "Spaghetti in sauce, chicken or crispy chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m72", shopId: "s401", category: "Noodles",
     name: "สปาเก็ตตี้ผัดซอส หมูกรอบ/สามชั้น", nameEn: "Spaghetti in sauce, crispy pork or pork belly",
-    price: 45, addOns: [] },
+    price: 45, addOns: [EGG] },
 
   { id: "m73", shopId: "s401", category: "Noodles",
     name: "สปาเก็ตตี้ขี้เมา หมู/ไก่", nameEn: "Drunken spaghetti, pork or chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m74", shopId: "s401", category: "Noodles",
     name: "สปาเก็ตตี้เขียวหวาน หมู/ไก่", nameEn: "Green curry spaghetti, pork or chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m75", shopId: "s401", category: "Noodles",
     name: "ผัดไทย หมู/ไก่", nameEn: "Pad Thai, pork or chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m76", shopId: "s401", category: "Noodles",
     name: "ผัดไทย หมูกรอบ/ไก่กรอบ", nameEn: "Pad Thai, crispy pork or crispy chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m77", shopId: "s401", category: "Noodles",
     name: "มาม่าผัดไข่ หมู/ไก่", nameEn: "Stir-fried instant noodles with egg, pork or chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m78", shopId: "s401", category: "Noodles",
     name: "มาม่าผัดไข่ หมูกรอบ/ไก่กรอบ", nameEn: "Stir-fried instant noodles with egg, crispy pork or chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m79", shopId: "s401", category: "Noodles",
     name: "มาม่าผัดขี้เมา หมู/ไก่", nameEn: "Drunken instant noodles, pork or chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m80", shopId: "s401", category: "Noodles",
     name: "มาม่าผัดขี้เมา หมูกรอบ/ไก่กรอบ", nameEn: "Drunken instant noodles, crispy pork or chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m81", shopId: "s401", category: "Noodles",
     name: "มาม่าผัดต้มยำ หมู/ไก่", nameEn: "Tom yum instant noodles, pork or chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m82", shopId: "s401", category: "Noodles",
     name: "มาม่าผัดต้มยำ หมูกรอบ/ไก่กรอบ", nameEn: "Tom yum instant noodles, crispy pork or chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m83", shopId: "s401", category: "Noodles",
     name: "มาม่าผัดกะเพรา หมู/ไก่", nameEn: "Basil stir-fried instant noodles, pork or chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m84", shopId: "s401", category: "Noodles",
     name: "ราดหน้า หมู/ไก่", nameEn: "Gravy noodles, pork or chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m85", shopId: "s401", category: "Noodles",
     name: "สุกี้แห้ง/น้ำ หมู/ไก่", nameEn: "Suki, dry or soup, pork or chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m86", shopId: "s401", category: "Noodles",
     name: "ก๋วยเตี๋ยวคั่ว ไก่/หมู", nameEn: "Dry-fried noodles, chicken or pork",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m87", shopId: "s401", category: "Noodles",
     name: "สปาเก็ตตี้ผัดกะเพรา", nameEn: "Basil stir-fried spaghetti",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m88", shopId: "s401", category: "Salads",
     name: "ยำวุ้นเส้นหมูสับ", nameEn: "Glass noodle salad, minced pork",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m89", shopId: "s401", category: "Salads",
     name: "ยำวุ้นเส้นหมูสับ หมูยอ", nameEn: "Glass noodle salad, minced pork and pork sausage",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m90", shopId: "s401", category: "Salads",
     name: "ยำวุ้นเส้นหมูสับ ไส้กรอก", nameEn: "Glass noodle salad, minced pork and sausage",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m91", shopId: "s401", category: "Salads",
     name: "ยำรวมมิตร", nameEn: "Mixed yum salad",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m92", shopId: "s401", category: "Salads",
     name: "ยำหมูกรอบ", nameEn: "Crispy pork salad",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m93", shopId: "s401", category: "Salads",
     name: "ยำมาม่าหมูสับ ไส้กรอก", nameEn: "Instant noodle salad, minced pork and sausage",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m94", shopId: "s401", category: "Salads",
     name: "ยำปลาหมึก", nameEn: "Squid salad",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m95", shopId: "s401", category: "Salads",
     name: "ยำทะเลรวม", nameEn: "Mixed seafood salad",
-    price: 45, addOns: [] },
+    price: 45, addOns: [EGG] },
 
   { id: "m96", shopId: "s401", category: "Salads",
     name: "ยำเห็ดรวม", nameEn: "Mixed mushroom salad",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m97", shopId: "s401", category: "Salads",
     name: "ยำปลากระป๋อง", nameEn: "Canned fish salad",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m98", shopId: "s401", category: "Salads",
     name: "ยำเส้นเล็ก", nameEn: "Thin rice noodle salad",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m99", shopId: "s401", category: "Stir-fries",
     name: "ผัดพริกเกลือ หมูหมัก/หมูสับ", nameEn: "Chili-salt stir-fry, marinated or minced pork",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m100", shopId: "s401", category: "Stir-fries",
     name: "ผัดพริกเกลือ ไก่/ไก่กรอบ", nameEn: "Chili-salt stir-fry, chicken or crispy chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m101", shopId: "s401", category: "Stir-fries",
     name: "ผัดพริกเกลือ ปลาสด/ปลาทอด", nameEn: "Chili-salt stir-fry, fresh or fried fish",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m102", shopId: "s401", category: "Stir-fries",
     name: "พริกเกลือเต้าหู้", nameEn: "Chili-salt tofu",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m103", shopId: "s401", category: "Stir-fries",
     name: "ผัดพริกเกลือเต้าหู้ หมู/ไก่", nameEn: "Chili-salt tofu stir-fry, pork or chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m104", shopId: "s401", category: "Stir-fries",
     name: "ผัดพริกเกลือ หมูสามชั้น/หมูกรอบ", nameEn: "Chili-salt stir-fry, pork belly or crispy pork",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m105", shopId: "s401", category: "Stir-fries",
     name: "ผัดพริกเกลือทะเล", nameEn: "Chili-salt seafood stir-fry",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m106", shopId: "s401", category: "Stir-fries",
     name: "กะเพรา หมูสับ/หมูหมัก", nameEn: "Basil stir-fry, minced or marinated pork",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m107", shopId: "s401", category: "Stir-fries",
     name: "กะเพรา ไก่/ไก่กรอบ", nameEn: "Basil stir-fry, chicken or crispy chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m108", shopId: "s401", category: "Stir-fries",
     name: "กะเพรา ปลา/ปลาทอด", nameEn: "Basil stir-fry, fish or fried fish",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m109", shopId: "s401", category: "Stir-fries",
     name: "กะเพราวุ้นเส้น หมูสับ/หมูหมัก/ไก่", nameEn: "Basil stir-fry with glass noodles, pork or chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m110", shopId: "s401", category: "Stir-fries",
     name: "กะเพราวุ้นเส้น หมูกรอบ/ไก่กรอบ", nameEn: "Basil stir-fry with glass noodles, crispy pork or chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m111", shopId: "s401", category: "Stir-fries",
     name: "กะเพรา หมูกรอบ/หมูสามชั้น", nameEn: "Basil stir-fry, crispy pork or pork belly",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m112", shopId: "s401", category: "Stir-fries",
     name: "กะเพรา กุ้ง/ปลาหมึก/หอยแมลงภู่", nameEn: "Basil stir-fry, shrimp, squid or mussels",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m113", shopId: "s401", category: "Stir-fries",
     name: "กะเพราเห็ด หมูสับ/หมูหมัก/ไก่", nameEn: "Basil stir-fry with mushrooms, pork or chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m114", shopId: "s401", category: "Stir-fries",
     name: "กะเพราเต้าหู้ หมูสับ/หมูหมัก/ไก่", nameEn: "Basil stir-fry with tofu, pork or chicken",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m115", shopId: "s401", category: "Stir-fries",
     name: "กะเพราไข่เยี่ยวม้าล้วน", nameEn: "Basil stir-fry with century egg only",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m116", shopId: "s401", category: "Stir-fries",
     name: "กะเพราไข่เยี่ยวม้าหมูสับ", nameEn: "Basil stir-fry with century egg and minced pork",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m117", shopId: "s401", category: "Stir-fries",
     name: "กะเพราเต้าหู้ หมูกรอบ/ไก่กรอบ", nameEn: "Basil stir-fry with tofu, crispy pork or crispy chicken",
-    price: 45, addOns: [] },
+    price: 45, addOns: [EGG] },
 
   { id: "m118", shopId: "s401", category: "Stir-fries",
     name: "กะเพราทะเลรวม", nameEn: "Basil stir-fry, mixed seafood (shrimp, squid, mussels, fish)",
-    price: 45, addOns: [] },
+    price: 45, addOns: [EGG] },
 
   { id: "m119", shopId: "s401", category: "Soups",
     name: "ต้มแซ่บ หมู/ไก่", nameEn: "Spicy herbal soup, pork or chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m120", shopId: "s401", category: "Soups",
     name: "ต้มแซ่บทะเลรวม", nameEn: "Spicy herbal soup, mixed seafood",
-    price: 45, addOns: [] },
+    price: 45, addOns: [EGG] },
 
   { id: "m121", shopId: "s401", category: "Soups",
     name: "ต้มยำ หมู/ไก่", nameEn: "Tom yum soup, pork or chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m122", shopId: "s401", category: "Soups",
     name: "ต้มยำทะเลรวม", nameEn: "Tom yum soup, mixed seafood",
-    price: 45, addOns: [] },
+    price: 45, addOns: [EGG] },
 
   { id: "m123", shopId: "s401", category: "Soups",
     name: "ต้มจืดเต้าหู้หมูสับ", nameEn: "Clear soup, tofu and minced pork",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m124", shopId: "s401", category: "Soups",
     name: "ต้มจืดเต้าหู้ต้มยำสาหร่าย", nameEn: "Tofu and seaweed tom yum soup",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m125", shopId: "s401", category: "Soups",
     name: "ต้มยำปลากระป๋อง", nameEn: "Tom yum soup with canned fish",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m126", shopId: "s401", category: "Rice",
     name: "ข้าวไข่เจียว", nameEn: "Omelette on rice",
-    price: 30, addOns: [] },
+    price: 30, addOns: [EGG] },
 
   { id: "m127", shopId: "s401", category: "Rice",
     name: "ข้าวไข่เจียวทรงเครื่อง", nameEn: "Loaded omelette on rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m128", shopId: "s401", category: "Rice",
     name: "ข้าวไข่เจียว หมูสับ/ไส้กรอก/ปูอัด", nameEn: "Omelette on rice with minced pork, sausage or crab stick",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m129", shopId: "s401", category: "Rice",
     name: "ข้าวไข่ข้นแฮม+เบค่อน", nameEn: "Creamy egg with ham and bacon on rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m130", shopId: "s401", category: "Rice",
     name: "ข้าวไข่ข้นแฮม+เบค่อน ชีส", nameEn: "Creamy egg with ham, bacon and cheese on rice",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m131", shopId: "s401", category: "Rice",
     name: "ข้าวไข่ข้นหมูกรอบ", nameEn: "Creamy egg with crispy pork on rice",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m132", shopId: "s401", category: "Rice",
     name: "ข้าวไข่เจียวดาวทรงเครื่อง", nameEn: "Loaded fried egg on rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m133", shopId: "s401", category: "Rice",
     name: "ข้าวผัดโบราณ หมู/ไก่", nameEn: "Old-style fried rice, pork or chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m134", shopId: "s401", category: "Rice",
     name: "ข้าวผัดไข่ หมู/ไก่", nameEn: "Egg fried rice, pork or chicken",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m135", shopId: "s401", category: "Rice",
     name: "ข้าวผัดแฮมเบค่อน", nameEn: "Ham and bacon fried rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m136", shopId: "s401", category: "Rice",
     name: "ข้าวผัดไส้กรอก/หมูยอ", nameEn: "Sausage or pork sausage fried rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m137", shopId: "s401", category: "Rice",
     name: "ข้าวผัดกุนเชียง", nameEn: "Chinese sausage fried rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m138", shopId: "s401", category: "Rice",
     name: "ข้าวผัดต้มยำ", nameEn: "Tom yum fried rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m139", shopId: "s401", category: "Rice",
     name: "ข้าวผัดแหนม", nameEn: "Fermented pork sausage fried rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m140", shopId: "s401", category: "Rice",
     name: "ข้าวผัดปลากระป๋อง", nameEn: "Canned fish fried rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m141", shopId: "s401", category: "Rice",
     name: "ข้าวผัดไก่แซ่บ", nameEn: "Spicy chicken fried rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m142", shopId: "s401", category: "Rice",
     name: "ข้าวผัดน้ำพริกเผา", nameEn: "Chili paste fried rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m143", shopId: "s401", category: "Rice",
     name: "ข้าวผัดหมาล่า", nameEn: "Mala fried rice",
-    price: 35, addOns: [] },
+    price: 35, addOns: [EGG] },
 
   { id: "m144", shopId: "s401", category: "Rice",
     name: "ข้าวผัดอเมริกัน", nameEn: "American fried rice",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m145", shopId: "s401", category: "Rice",
     name: "ข้าวผัดกุ้ง", nameEn: "Shrimp fried rice",
-    price: 40, addOns: [] },
+    price: 40, addOns: [EGG] },
 
   { id: "m146", shopId: "s401", category: "Rice",
     name: "ข้าวผัดทะเลรวม", nameEn: "Mixed seafood fried rice",
-    price: 45, addOns: [] },
+    price: 45, addOns: [EGG] },
 
   // s402 Nai Ton Noodles (Dorm 4, real menu read from the photo of the board)
 
